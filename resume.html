@@ -27,9 +27,15 @@
                         <h1>Desmond John Tubije</h1>
                         <p class="resume-subtitle">Entry-Level Software Developer | IT Graduate</p>
                         <div class="resume-contact-info">
-                            <span><i class="fas fa-envelope"></i><a href="https://mail.google.com/mail/?view=cm&to=tubijedesmondjohn@gmail.com&su=Hello%20Desmond&body=Hi%20Desmond" target="_blank"></a></span>
-                            <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/desmond-john-tubije-7907a337a/"></a></span>
-                            <span><i class="fab fa-github"></i> <a href="https://github.com/djtubije"></a></span>
+                            <a href="https://mail.google.com/mail/?view=cm&to=tubijedesmondjohn@gmail.com&su=Hello%20Desmond&body=Hi%20Desmond" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/desmond-john-tubije-7907a337a/" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/djtubije" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
                         </div>
                     </header>
                     <hr>
@@ -125,13 +131,14 @@
         const element = document.querySelector('.resume-paper');
 
     const opt = {
-        margin:       0.5,
+        margin:       0,             
         filename:     'DesmondJohnTubije_Resume.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2, scrollY: 0 },
+        html2canvas:  { scale: 2, backgroundColor: '#ffffff' },  
         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' },
-        pagebreak:    { mode: ['css', 'legacy'] } // enable multi-page breaks
+        pagebreak:    { mode: ['css', 'legacy'] }
     };
+
 
 
         html2pdf().set(opt).from(element).save();
