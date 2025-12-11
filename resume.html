@@ -21,21 +21,16 @@
 <main>
         <section id="resume-view" class="content-section">
             <div class="container">
-                
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <h2>My Professional Resume</h2>
-                    <p>This is a web overview of my qualifications. For the complete document with full contact details, please request the PDF below.</p>
-                </div>
 
                 <div class="resume-paper">
                     
                     <header class="resume-header">
                         <h1>Desmond John Tubije</h1>
-                        <p class="resume-subtitle">Software Developer | Tech Enthusiast</p>
+                        <p class="resume-subtitle">Entry-Level Software Developer | IT Graduate</p>
                         <div class="resume-contact-info">
-                            <span><i class="fas fa-envelope"></i> email@yahoo.com</span>
-                            <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/desmond-john-tubije-7907a337a/">LinkedIn Profile</a></span>
-                            <span><i class="fab fa-github"></i> <a href="https://github.com/djtubije">GitHub Profile</a></span>
+                            <span><i class="fas fa-envelope"></i><a href="https://mail.google.com/mail/?view=cm&to=tubijedesmondjohn@gmail.com&su=Hello%20Desmond&body=Hi%20Desmond" target="_blank"></a></span>
+                            <span><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/desmond-john-tubije-7907a337a/"></a></span>
+                            <span><i class="fab fa-github"></i> <a href="https://github.com/djtubije"></a></span>
                         </div>
                     </header>
 
@@ -44,31 +39,33 @@
                     <div class="resume-section">
                         <h3>Professional Summary</h3>
                         <p>
-                            Motivated and detail-oriented developer with a strong foundation in web technologies. 
-                            Passionate about creating user-friendly interfaces and solving complex problems through code. 
-                            Eager to contribute to a dynamic team and continue learning modern frameworks.
+                            Enthusiastic and detail-oriented fresh graduate with a strong foundation in 
+                            web and software technologies. Passionate about developing solutions to 
+                            complex problems through code. Highly motivated to learn, grow, and 
+                            contribute to a professional team while exploring new frameworks and 
+                            opportunities in the tech industry.
                         </p>
                     </div>
 
                     <div class="resume-section">
                         <h3>Technical Skills</h3>
                         <ul class="skills-grid">
-                            <li>HTML5 & CSS3</li>
-                            <li>Python, PHP, JavaScript, C#</li>
+                            <li>HTML5, CSS, Streamlit, Laravel</li>
+                            <li>Python, PHP, Kotlin, C#, JavaScript</li>
                             <li>Git & GitHub</li>
                             <li>MSSQL, MongoDB</li>
                         </ul>
                     </div>
 
                     <div class="resume-section">
-                        <h3>Experience</h3>
-                        
+                        <h3>Experience</h3>      
                         <div class="job-entry">
-                            <h4>Job Title / Intern Role</h4>
+                            <h4>Intern - Software Engineer & Systems Analyst</h4>
                             <span class="job-date">Globe Telecom Inc | Sept 2025 - Dec 2025</span>
                             <ul>
-                                <li></li>
-                                <li></li>
+                                <li>Designed and developed a script to automate the web tool auditing process.</li>
+                                <li>Collaborated with cross-functional teams within the department to create a network diagram for the pSIM to eSIM conversion.</li>
+                                <li>Communicated project updates to stakeholders in a clear and timely manner.</li>
                             </ul>
                         </div>
                     </div>
@@ -78,7 +75,7 @@
                         <div class="education-entry">
                             <h4>Bachelor of Science in Information Systems</h4>
                             <span class="job-date">De La Salle-College of Saint Benilde | 2026</span>
-                            <p>Awards: Dean's Lister</p>
+                            <p>Awards: Dean's Lister | AY 2022-2023</p>
                         </div>
                         <div class="education-entry">
                             <h4>Bachelor in Medical Laboratory Science</h4>
@@ -88,12 +85,11 @@
 
                 </div>
                 <div style="text-align: center; margin-top: 40px;">
-                    <p>Need my detailed contact info and full work history?</p>
-                    
-                    <a href="mailto:tubijedesmondjohn18@yahoo.com?subject=Requesting%20Full%20Resume" class="cta-button">
-                        <i class="fas fa-paper-plane"></i> Request Full PDF Resume via Email
-                    </a>
+                    <button id="download-btn" class="cta-button">
+                        <i class="fas fa-download"></i> Download Resume
+                    </button>
                 </div>
+
 
             </div>
         </section>
@@ -131,5 +127,22 @@
                 console.error('Error loading the footer:', error);
             });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+    document.getElementById('download-btn').addEventListener('click', () => {
+        const element = document.querySelector('.resume-paper');
+
+        const opt = {
+            margin:       0.5,               // inches
+            filename:     'DesmondJohnTubije_Resume.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },      // higher scale = better quality
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        html2pdf().set(opt).from(element).save();
+    });
+    </script>
+
 </body>
 </html>

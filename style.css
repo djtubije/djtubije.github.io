@@ -26,7 +26,6 @@ body {
     max-width: 1200px;
 }
 
-/* --- HEADER --- */
 header {
     background: var(--secondary-color);
     color: #ffffff;
@@ -71,7 +70,6 @@ header nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* --- HERO SECTION --- */
 .hero {
     background: var(--light-color);
     color: var(--text-color);
@@ -115,7 +113,6 @@ header nav ul li a:hover {
     text-align: justify;
 }
 
-/* --- HERO SOCIAL ICONS --- */
 .hero-social-links {
     margin-bottom: 30px;
     display: flex;
@@ -136,16 +133,15 @@ header nav ul li a:hover {
     transform: translateY(-5px); 
 }
 
-/* --- BUTTONS --- */
 .cta-button {
-    display: inline-flex; /* Changed to inline-flex for better icon alignment */
+    display: inline-flex; 
     align-items: center;
     gap: 8px;
     background: var(--primary-color);
     color: #ffffff;
     padding: 12px 24px;
     text-decoration: none;
-    border-radius: 30px; /* More rounded for modern look */
+    border-radius: 30px; 
     font-weight: bold;
     transition: all 0.3s ease;
     border: none;
@@ -158,12 +154,10 @@ header nav ul li a:hover {
     box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
 }
 
-/* --- SKILLS SECTION (MAIN SITE) --- */
 .skills-section {
     background-color: #ffffff; 
 }
 
-/* Note: This grid is for the Main Skills Page */
 .skills-grid {
     display: flex;
     gap: 40px; 
@@ -206,7 +200,6 @@ header nav ul li a:hover {
     color: var(--primary-color)
 }
 
-/* --- GENERAL CONTENT --- */
 .content-section {
     padding: 60px 0;
     min-height: 70vh; 
@@ -223,7 +216,6 @@ header nav ul li a:hover {
     background: var(--light-color);
 }
 
-/* --- PROJECTS --- */
 .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -308,7 +300,6 @@ header nav ul li a:hover {
     list-style-type: square;
 }
 
-/* --- UPDATED: Projects List Styling --- */
 .projects-header {
     margin-top: 40px;
     margin-bottom: 20px;
@@ -398,7 +389,6 @@ header nav ul li a:hover {
     margin-bottom: 5px;
 }
 
-/* --- MODAL --- */
 .modal {
     display: none; 
     position: fixed; 
@@ -458,7 +448,6 @@ header nav ul li a:hover {
     height: 150px;
 }
 
-/* --- FOOTER --- */
 footer {
     background: var(--secondary-color);
     color: #ffffff;
@@ -516,17 +505,12 @@ footer {
     margin-bottom: 0;
 }
 
-/* =========================================
-   RESUME PAGE SPECIFIC STYLES
-   ========================================= */
 
-/* 1. Resume Background Area */
 #resume-view {
     background-color: #f0f2f5; 
     padding: 50px 0;
 }
 
-/* 2. The Paper Sheet */
 .resume-paper {
     background-color: #ffffff !important;
     width: 100%;
@@ -540,7 +524,6 @@ footer {
     text-align: left; 
 }
 
-/* 3. Resume Header (Resets global header styles just for this paper) */
 .resume-paper .resume-header {
     background: transparent !important;
     color: #333 !important;
@@ -583,7 +566,6 @@ footer {
     font-weight: bold;
 }
 
-/* 4. Resume Section Headings */
 .resume-section {
     margin-bottom: 30px;
 }
@@ -598,8 +580,6 @@ footer {
     letter-spacing: 1px;
 }
 
-/* 5. Resume Skills Grid (Specific Overrides) 
-   We use .resume-paper .skills-grid to ensure we don't break the main skills page */
 .resume-paper .skills-grid {
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
@@ -617,10 +597,9 @@ footer {
     border: 1px solid #e9ecef !important;
     list-style: none !important;
     font-weight: 500 !important;
-    width: auto !important; /* Resets flex width issues */
+    width: auto !important; 
 }
 
-/* 6. Job Entries inside Resume */
 .job-entry h4, .education-entry h4 {
     margin: 0 0 5px 0;
     color: #333;
@@ -645,13 +624,10 @@ footer {
 .job-entry li {
     margin-bottom: 6px;
     color: #444;
-    border-bottom: none !important; /* Removes dashed line from main styles */
+    border-bottom: none !important; 
     padding: 0 !important;
 }
 
-/* =========================================
-   MEDIA QUERIES (RESPONSIVE)
-   ========================================= */
 @media (max-width: 768px) {
     
     header .container {
@@ -701,7 +677,6 @@ footer {
         justify-content: center;
     }
     
-    /* Main Skills Page Response */
     .skills-grid {
         flex-direction: column; 
         gap: 20px;
@@ -728,16 +703,14 @@ footer {
         padding: 20px; 
     }
 
-    /* Resume Mobile Response */
     .resume-paper {
         padding: 20px !important;
     }
     
     .resume-paper .skills-grid {
-        grid-template-columns: 1fr 1fr !important; /* 2 columns on mobile */
+        grid-template-columns: 1fr 1fr !important; 
     }
 
-    /* Projects Mobile Response */
     .project-card {
         flex-direction: column; 
         padding: 15px;
