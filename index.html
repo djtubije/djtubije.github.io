@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>djbt - Digital Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Desmond John Tubije</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="academic-work.html">Academic Work</a></li>
+                    <li><a href="internship.html">Internship</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content"> 
+                <div class="hero-image">
+                    <img src="images/profilepicture.JPG" alt="Desmond John Tubije Profile Picture">
+                </div>
+
+                <div class="hero-text">
+                    <h2>Hello, I'm Desmond John Tubije</h2>
+                    <p>
+                        As an aspiring Software Developer, I am eager to contribute to innovative projects. 
+                        This portfolio shares practical applications and academic work, 
+                        demonstrating my foundational skills in problem-solving and code development.
+                    </p>
+                    
+                    <div class="hero-social-links">
+                        <a href="YOUR_GITHUB_URL" target="_blank" aria-label="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="YOUR_LINKEDIN_URL" target="_blank" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <a href="academic-work.html" class="cta-button">View My Work</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="skills-section content-section">
+            <div class="container">
+                <h2>My Core Competencies</h2>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Technical Skills</h3>
+                        <ul>
+                            <li>Languages: C#, Python, PHP, Kotlin, JavaScript</li>
+                            <li>Databases: MSSQL, MongoDB</li>
+                            <li>Web/Frameworks: HTML5, Laravel, Streamlit</li>
+                            <li>Tools/Other: Git/GitHub</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Soft Skills</h3>
+                        <ul>
+                            <li>Problem-Solving & Analytical Thinking</li>
+                            <li>Teamwork & Collaboration (Experienced in Agile/Scrum)</li>
+                            <li>Adaptability</li>
+                            <li>Willingness to learn</li>
+                            <li>Time Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading the footer:', error);
+            });
+    </script>
+
+</body>
+</html>

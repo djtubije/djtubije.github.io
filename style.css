@@ -1,0 +1,357 @@
+:root {
+    --primary-color: #3498db; 
+    --secondary-color: #2c3e50; 
+    --light-color: #ecf0f1; 
+    --text-color: #333;
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    max-width: 1200px;
+}
+
+header {
+    background: var(--secondary-color);
+    color: #ffffff;
+    padding: 1rem 0;
+    border-bottom: 5px solid var(--primary-color);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hero {
+    background: var(--light-color);
+    color: var(--text-color);
+    padding: 100px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 40px; 
+}
+
+.hero-image {
+    flex: 0 0 35%;
+    max-width: 350px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; 
+    border: 5px solid var(--primary-color); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text {
+    flex: 1; 
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-align: left; 
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: left; 
+}
+
+/* --- HERO SOCIAL ICONS --- */
+.hero-social-links {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 25px; /* Spacing between icons */
+    align-items: center;
+}
+
+.hero-social-links a {
+    font-size: 2.5rem; /* Icon Size */
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+}
+
+.hero-social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-5px); /* Floats up on hover */
+}
+/* --- END HERO ICONS --- */
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #2980b9; 
+}
+
+.skills-section {
+    background-color: #ffffff; 
+}
+
+.skills-grid {
+    display: flex;
+    gap: 40px; 
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.skill-category {
+    flex: 1;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 8px;
+    background: var(--light-color); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.skill-category h3 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.skill-category ul {
+    list-style: none; 
+    padding: 0;
+}
+
+.skill-category ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+.skill-category ul li:last-child {
+    border-bottom: none;
+}
+
+.content-section {
+    padding: 60px 0;
+    min-height: 70vh; 
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.grey-background {
+    background: var(--light-color);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 30px;
+}
+
+.project-item {
+    background: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.project-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.internship-item {
+    background: #ffffff;
+    padding: 25px;
+    border-left: 5px solid var(--primary-color);
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.internship-item h4 {
+    color: var(--text-color);
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.internship-item ul {
+    margin-top: 10px;
+    margin-left: 20px;
+    list-style-type: square;
+}
+
+footer {
+    background: var(--secondary-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* --- FOOTER SOCIAL ICONS --- */
+.footer-social-links {
+    margin-bottom: 15px;
+}
+
+.footer-social-links a {
+    color: #ffffff;
+    font-size: 1.5rem; /* Slightly smaller than hero icons */
+    text-decoration: none;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-social-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2); /* Grows slightly on hover */
+}
+/* --- END FOOTER ICONS --- */
+
+
+@media (max-width: 768px) {
+    
+    header .container {
+        flex-direction: column; 
+        text-align: center;
+    }
+    
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 5px;
+    }
+
+    header nav ul li a {
+        display: block; 
+    }
+
+    .hero-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-bottom: 30px;
+        max-width: 200px; 
+        flex: none;
+    }
+    
+    .hero-text h2, 
+    .hero-text p,
+    .cta-button {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Center the social icons on mobile */
+    .hero-social-links {
+        justify-content: center;
+    }
+    
+    .skills-grid {
+        flex-direction: column; 
+        gap: 20px;
+    }
+    
+    .skill-category {
+        max-width: 100%; 
+    }
+
+    .container {
+        width: 90%; 
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+    }
+}
