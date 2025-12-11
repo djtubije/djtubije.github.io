@@ -568,6 +568,8 @@ footer {
 
 .resume-section {
     margin-bottom: 30px;
+    page-break-inside: avoid;  
+    page-break-after: auto;
 }
 
 .resume-section h3 {
