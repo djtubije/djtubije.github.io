@@ -243,6 +243,12 @@ header nav ul li a:hover {
     font-size: small;
 }
 
+.project-item .project-meta {
+    font-size: small; 
+    margin-bottom: 8px; 
+    color: #777; 
+}
+
 .project-item p {
     text-align: justify;
     font-size: small;
