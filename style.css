@@ -329,6 +329,7 @@ header nav ul li a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures image fills the box perfectly */
+    object-position: center;
     display: block;
     min-height: 160px; /* Ensures the image has height even if text is short */
 }
@@ -362,6 +363,16 @@ header nav ul li a:hover {
     color: var(--text-color);
     line-height: 1.5;
     margin: 0;
+}
+
+.project-bullets {
+    list-style-type: disc; /* Ensures the dots appear */
+    padding-left: 20px;    /* Indents the bullets so they don't hit the edge */
+    margin-top: 10px;      /* Adds space between the tags and the list */
+}
+
+.project-bullets li {
+    margin-bottom: 5px;    /* Adds a little space between the two bullets */
 }
 /* --- END NEW PROJECTS STYLE --- */
 

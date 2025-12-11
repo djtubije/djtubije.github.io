@@ -52,14 +52,12 @@
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
 
-            // 2. Highlight the current page in the navigation
             const currentPath = window.location.pathname.split("/").pop() || 'index.html';
             const navLinks = document.querySelectorAll('nav ul li a');
 
             navLinks.forEach(link => {
-                // Check if the link's href matches the current file name
                 if (link.getAttribute('href') === currentPath) {
-                    link.style.color = '#3498db'; // Sets your primary blue color
+                    link.style.color = '#3498db'; 
                     link.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
                 }
             });

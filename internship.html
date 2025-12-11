@@ -42,9 +42,20 @@
                         <div class="project-info">
                             <h4>ACL - Webtool Audit Automation</h4>
                             <div class="project-meta">Python</div>
-                            <p class="project-desc">
-                                
-                            </p>
+                            <ul class="project-desc project-bullets">
+                                <li>
+                                    Created a script that can automate the cleaning, 
+                                    and audit process of the CXM webtool audit process.
+                                </li>
+                                <li>
+                                    Created a frontend of the project using Strealit which
+                                    is part of an open platform library of Python.
+                                </li>
+                                <li>
+                                    Weekly discussions with the stakeholder to understand and create a 
+                                    solution about the current pain points of their audit process.
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
@@ -53,24 +64,28 @@
                             <img src="https://placehold.co/600x400/png?text=Database+Migration+Log" alt="Project 2 Screenshot">
                         </div>
                         <div class="project-info">
-                            <h4>eSIM Proposal</h4>
-                            <div class="project-meta">Google Workspace</div>
-                            <p class="project-desc">
-                                
-                            </p>
+                            <h4>eSIM Project</h4>
+                            <div class="project-meta">Google Workspace - Draw.io - D2playrgound</div>
+                            <ul class="project-desc project-bullets">
+                                <li>
+                                    Collaborated with different teams in creating a network diagram for visualization
+                                    regarding the process of converting Physical SIM to eSIM through the Globe One App.
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
                     <div class="project-card">
                         <div class="project-thumbnail">
-                            <img src="https://placehold.co/600x400/png?text=Database+Migration+Log" alt="Project 2 Screenshot">
+                            <img src="images/DevconTeam1.jpeg" alt="Image with Automation Team with DAISI">
                         </div>
                         <div class="project-info">
                             <h4>Globe Devcon</h4>
                             <div class="project-meta">Google Workspace</div>
-                            <p class="project-desc">
-                                
-                            </p>
+                                <ul class="project-desc project-bullets">
+                                    <li>Assisted the team in demonstrating the chatbot (DAISI) during the DEVCON event at The Globe Towers.</li>
+                                    <li>Showcased interpersonal skills by demonstrating the AI chatbot to employees, interns, and event attendees.</li>
+                                </ul>
                         </div>
                     </div>
 
@@ -87,14 +102,12 @@
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
 
-            // 2. Highlight the current page in the navigation
             const currentPath = window.location.pathname.split("/").pop() || 'index.html';
             const navLinks = document.querySelectorAll('nav ul li a');
 
             navLinks.forEach(link => {
-                // Check if the link's href matches the current file name
                 if (link.getAttribute('href') === currentPath) {
-                    link.style.color = '#3498db'; // Sets your primary blue color
+                    link.style.color = '#3498db'; 
                     link.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
                 }
             });
