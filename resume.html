@@ -137,13 +137,15 @@
         const element = document.querySelector('.resume-paper');
 
     const opt = {
-        margin:       0,             
+        margin:       0,             // no extra margin around the div
         filename:     'DesmondJohnTubije_Resume.pdf',
         image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2, backgroundColor: '#ffffff' },  
+        html2canvas:  { scale: 2, backgroundColor: '#ffffff' },  // forces white bg
         jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' },
         pagebreak:    { mode: ['css', 'legacy'] }
     };
+
+
 
 
 
