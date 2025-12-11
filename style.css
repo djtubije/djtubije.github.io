@@ -119,12 +119,12 @@ header nav ul li a:hover {
 .hero-social-links {
     margin-bottom: 30px;
     display: flex;
-    gap: 25px; /* Spacing between icons */
+    gap: 25px; 
     align-items: center;
 }
 
 .hero-social-links a {
-    font-size: 2.5rem; /* Icon Size */
+    font-size: 2.5rem; 
     color: var(--secondary-color);
     text-decoration: none;
     transition: all 0.3s ease;
@@ -133,29 +133,37 @@ header nav ul li a:hover {
 
 .hero-social-links a:hover {
     color: var(--primary-color);
-    transform: translateY(-5px); /* Floats up on hover */
+    transform: translateY(-5px); 
 }
 
+/* --- BUTTONS --- */
 .cta-button {
-    display: inline-block;
+    display: inline-flex; /* Changed to inline-flex for better icon alignment */
+    align-items: center;
+    gap: 8px;
     background: var(--primary-color);
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 30px; /* More rounded for modern look */
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .cta-button:hover {
     background: #2980b9; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
 }
 
-/* --- SKILLS SECTION --- */
+/* --- SKILLS SECTION (MAIN SITE) --- */
 .skills-section {
     background-color: #ffffff; 
 }
 
+/* Note: This grid is for the Main Skills Page */
 .skills-grid {
     display: flex;
     gap: 40px; 
@@ -215,7 +223,7 @@ header nav ul li a:hover {
     background: var(--light-color);
 }
 
-/* --- Original Grid Projects (For Projects Page) --- */
+/* --- PROJECTS --- */
 .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -300,8 +308,7 @@ header nav ul li a:hover {
     list-style-type: square;
 }
 
-/* --- UPDATED: Projects List Styling (YouTube Style - Side by Side) --- */
-
+/* --- UPDATED: Projects List Styling --- */
 .projects-header {
     margin-top: 40px;
     margin-bottom: 20px;
@@ -311,10 +318,9 @@ header nav ul li a:hover {
     padding-bottom: 10px;
 }
 
-/* The Container for each project "Row" */
 .project-card {
     display: flex;
-    flex-direction: row; /* Forces Side-by-Side */
+    flex-direction: row; 
     align-items: flex-start;
     background-color: white;
     margin-bottom: 25px;
@@ -329,9 +335,8 @@ header nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* Left Side: The Thumbnail Image */
 .project-thumbnail {
-    flex: 0 0 300px; /* Fixed width for the image part */
+    flex: 0 0 300px; 
     margin-right: 25px;
     position: relative;
     background: #eee;
@@ -339,7 +344,7 @@ header nav ul li a:hover {
 
 .project-thumbnail img {
     width: 100%;
-    height: 170px; /* Fixed height for uniformity */
+    height: 170px; 
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
@@ -352,7 +357,6 @@ header nav ul li a:hover {
     opacity: 0.9;
 }
 
-/* Right Side: The Text Info */
 .project-info {
     flex: 1;
     display: flex;
@@ -374,7 +378,7 @@ header nav ul li a:hover {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     display: flex;
-    justify-content: flex-start; /* Aligns tags to left */
+    justify-content: flex-start; 
 }
 
 .project-desc {
@@ -394,7 +398,7 @@ header nav ul li a:hover {
     margin-bottom: 5px;
 }
 
-/* --- LIGHTBOX (MODAL) STYLES (Added for Popup) --- */
+/* --- MODAL --- */
 .modal {
     display: none; 
     position: fixed; 
@@ -468,7 +472,7 @@ footer {
 
 .footer-social-links a {
     color: #ffffff;
-    font-size: 1.5rem; /* Slightly smaller than hero icons */
+    font-size: 1.5rem; 
     text-decoration: none;
     margin: 0 15px;
     transition: all 0.3s ease;
@@ -477,7 +481,7 @@ footer {
 
 .footer-social-links a:hover {
     color: var(--primary-color);
-    transform: scale(1.2); /* Grows slightly on hover */
+    transform: scale(1.2); 
 }
 
 .reflection-entry {
@@ -512,7 +516,142 @@ footer {
     margin-bottom: 0;
 }
 
-/* --- MEDIA QUERIES --- */
+/* =========================================
+   RESUME PAGE SPECIFIC STYLES
+   ========================================= */
+
+/* 1. Resume Background Area */
+#resume-view {
+    background-color: #f0f2f5; 
+    padding: 50px 0;
+}
+
+/* 2. The Paper Sheet */
+.resume-paper {
+    background-color: #ffffff !important;
+    width: 100%;
+    max-width: 850px !important;
+    margin: 0 auto !important;
+    padding: 50px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+    border: 1px solid #eaeaea !important;
+    border-radius: 8px !important;
+    color: #333 !important;
+    text-align: left; 
+}
+
+/* 3. Resume Header (Resets global header styles just for this paper) */
+.resume-paper .resume-header {
+    background: transparent !important;
+    color: #333 !important;
+    padding: 0 !important;
+    margin-bottom: 30px !important;
+    border: none !important;
+    position: static !important;
+    text-align: center !important;
+    box-shadow: none !important;
+}
+
+.resume-paper .resume-header h1 {
+    color: var(--secondary-color) !important;
+    font-size: 2.5rem !important;
+    margin: 0 0 10px 0 !important;
+}
+
+.resume-subtitle {
+    font-size: 1.2rem;
+    color: #555;
+    font-weight: 400;
+}
+
+/* Contact Info */
+.resume-contact-info {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.resume-contact-info span {
+    margin: 0 10px;
+    font-size: 0.95rem;
+    color: #666;
+    display: inline-block;
+}
+
+.resume-contact-info a {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 4. Resume Section Headings */
+.resume-section {
+    margin-bottom: 30px;
+}
+
+.resume-section h3 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* 5. Resume Skills Grid (Specific Overrides) 
+   We use .resume-paper .skills-grid to ensure we don't break the main skills page */
+.resume-paper .skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+}
+
+.resume-paper .skills-grid li {
+    background: #f8f9fa !important;
+    padding: 10px !important;
+    border-radius: 4px !important;
+    text-align: center !important;
+    font-size: 0.9rem !important;
+    border: 1px solid #e9ecef !important;
+    list-style: none !important;
+    font-weight: 500 !important;
+    width: auto !important; /* Resets flex width issues */
+}
+
+/* 6. Job Entries inside Resume */
+.job-entry h4, .education-entry h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.job-date {
+    display: block;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.job-entry ul {
+    padding-left: 20px;
+    margin-top: 5px;
+    list-style-type: disc !important;
+}
+
+.job-entry li {
+    margin-bottom: 6px;
+    color: #444;
+    border-bottom: none !important; /* Removes dashed line from main styles */
+    padding: 0 !important;
+}
+
+/* =========================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================= */
 @media (max-width: 768px) {
     
     header .container {
@@ -562,6 +701,7 @@ footer {
         justify-content: center;
     }
     
+    /* Main Skills Page Response */
     .skills-grid {
         flex-direction: column; 
         gap: 20px;
@@ -588,8 +728,16 @@ footer {
         padding: 20px; 
     }
 
-    /* --- NEW Mobile Adjustments for YouTube Style --- */
-    /* This makes the image go on top on small screens */
+    /* Resume Mobile Response */
+    .resume-paper {
+        padding: 20px !important;
+    }
+    
+    .resume-paper .skills-grid {
+        grid-template-columns: 1fr 1fr !important; /* 2 columns on mobile */
+    }
+
+    /* Projects Mobile Response */
     .project-card {
         flex-direction: column; 
         padding: 15px;
@@ -604,7 +752,7 @@ footer {
     }
 
     .project-thumbnail img {
-        height: auto; /* Let height adjust naturally */
+        height: auto; 
         max-height: 250px;
     }
 
