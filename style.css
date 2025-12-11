@@ -26,6 +26,7 @@ body {
     max-width: 1200px;
 }
 
+/* --- HEADER --- */
 header {
     background: var(--secondary-color);
     color: #ffffff;
@@ -70,6 +71,7 @@ header nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* --- HERO SECTION --- */
 .hero {
     background: var(--light-color);
     color: var(--text-color);
@@ -133,7 +135,6 @@ header nav ul li a:hover {
     color: var(--primary-color);
     transform: translateY(-5px); /* Floats up on hover */
 }
-/* --- END HERO ICONS --- */
 
 .cta-button {
     display: inline-block;
@@ -150,6 +151,7 @@ header nav ul li a:hover {
     background: #2980b9; 
 }
 
+/* --- SKILLS SECTION --- */
 .skills-section {
     background-color: #ffffff; 
 }
@@ -196,6 +198,7 @@ header nav ul li a:hover {
     color: var(--primary-color)
 }
 
+/* --- GENERAL CONTENT --- */
 .content-section {
     padding: 60px 0;
     min-height: 70vh; 
@@ -212,7 +215,7 @@ header nav ul li a:hover {
     background: var(--light-color);
 }
 
-/* --- Original Grid Projects (If used elsewhere) --- */
+/* --- Original Grid Projects (For Projects Page) --- */
 .project-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -291,24 +294,26 @@ header nav ul li a:hover {
     list-style-type: square;
 }
 
-/* --- NEW: Projects List Styling (YouTube Style) --- */
+/* --- UPDATED: Projects List Styling (YouTube Style - Side by Side) --- */
 
 .projects-header {
     margin-top: 40px;
     margin-bottom: 20px;
     font-size: 1.5rem;
-    color: var(--secondary-color); /* Matches your theme */
+    color: var(--secondary-color);
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
 }
 
 /* The Container for each project "Row" */
 .project-card {
-    display: flex; /* This aligns image and text side-by-side */
+    display: flex;
+    flex-direction: row; /* Forces Side-by-Side */
+    align-items: flex-start;
     background-color: white;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    padding: 20px;
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -320,24 +325,30 @@ header nav ul li a:hover {
 
 /* Left Side: The Thumbnail Image */
 .project-thumbnail {
-    flex: 0 0 260px; /* Fixed width for the image part */
+    flex: 0 0 300px; /* Fixed width for the image part */
+    margin-right: 25px;
     position: relative;
     background: #eee;
 }
 
 .project-thumbnail img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures image fills the box perfectly */
-    object-position: center;
+    height: 170px; /* Fixed height for uniformity */
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
     display: block;
-    min-height: 160px; /* Ensures the image has height even if text is short */
+}
+
+.project-thumbnail img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 /* Right Side: The Text Info */
 .project-info {
-    flex: 1; /* Takes up the rest of the space */
-    padding: 20px;
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
@@ -356,6 +367,8 @@ header nav ul li a:hover {
     margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    display: flex;
+    justify-content: flex-start; /* Aligns tags to left */
 }
 
 .project-desc {
@@ -366,16 +379,76 @@ header nav ul li a:hover {
 }
 
 .project-bullets {
-    list-style-type: disc; /* Ensures the dots appear */
-    padding-left: 20px;    /* Indents the bullets so they don't hit the edge */
-    margin-top: 10px;      /* Adds space between the tags and the list */
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
 }
 
 .project-bullets li {
-    margin-bottom: 5px;    /* Adds a little space between the two bullets */
+    margin-bottom: 5px;
 }
-/* --- END NEW PROJECTS STYLE --- */
 
+/* --- LIGHTBOX (MODAL) STYLES (Added for Popup) --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    padding-top: 50px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    max-height: 80vh; 
+    object-fit: contain;
+    border-radius: 5px;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* --- FOOTER --- */
 footer {
     background: var(--secondary-color);
     color: #ffffff;
@@ -383,7 +456,6 @@ footer {
     padding: 20px 0;
 }
 
-/* --- FOOTER SOCIAL ICONS --- */
 .footer-social-links {
     margin-bottom: 15px;
 }
@@ -434,6 +506,7 @@ footer {
     margin-bottom: 0;
 }
 
+/* --- MEDIA QUERIES --- */
 @media (max-width: 768px) {
     
     header .container {
@@ -479,7 +552,6 @@ footer {
         margin-right: auto;
     }
     
-    /* Center the social icons on mobile */
     .hero-social-links {
         justify-content: center;
     }
@@ -506,19 +578,31 @@ footer {
         gap: 20px; 
     }
     
-    /* Mobile adjustments for Reflection */
     .reflection-entry {
-        padding: 20px; /* Less padding on small screens */
+        padding: 20px; 
     }
 
-    /* --- NEW Mobile Adjustments for Project List --- */
+    /* --- NEW Mobile Adjustments for YouTube Style --- */
+    /* This makes the image go on top on small screens */
     .project-card {
-        flex-direction: column; /* Stack image on top of text */
+        flex-direction: column; 
+        padding: 15px;
     }
     
     .project-thumbnail {
-        flex: none;
         width: 100%;
-        height: 200px; /* Fixed height for image on mobile */
+        max-width: none;
+        flex: none;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .project-thumbnail img {
+        height: auto; /* Let height adjust naturally */
+        max-height: 250px;
+    }
+
+    .project-info h4 {
+        font-size: 1.1rem;
     }
 }
