@@ -17,6 +17,7 @@
                     <li><a href="academic-work.html">Academic Work</a></li>
                     <li><a href="internship.html">Internship</a></li>
                     <li><a href="resume.html">Resume</a></li>
+                    <li><a href="reflection.html">Reflection</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,7 +32,7 @@
                     <h3>Globe Telecom Inc.</h3>
                     <h4>Intern - Software Engineer & Systems Analyst | 09/08/2025 - 12/10/2025</h4>
                     <ul>
-                        <li>Designed and Develop a project that automates webtool audit.</li>
+                        <li>Designed and Develop a script that automates webtool audit.</li>
                         <li>Participated in daily stand-ups and code reviews.</li>
                     </ul>
                 </div>
@@ -39,11 +40,23 @@
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Des Tubije. Built with HTML & CSS.</p>        
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading the footer:', error);
+            });
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflection - Desmond John Tubije</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Desmond John Tubije</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="academic-work.html">Academic Work</a></li>
+                    <li><a href="internship.html">Internship</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="reflection.html">Reflection</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="reflection" class="content-section">
+            <div class="container">
+                <h2>Reflection on my College Life</h2>
+                
+                <div class="reflection-entry">
+                    <h3>Technical Milestones</h3>
+                    <p>
+                        During my time as a Software Engineer & Systems Analyst intern, my most significant contribution was the design and development of a script to automate webtool audits. Before this automation, the process was likely manual and prone to human error. By implementing this solution, I learned the importance of <strong>efficiency</strong> and <strong>reliability</strong> in enterprise software.
+                    </p>
+                    <p>
+                        This task challenged my problem-solving skills, requiring me to understand the existing system architecture deeply before writing code. Seeing the script successfully run and save time for the team was a rewarding experience that solidified my passion for backend development and automation.
+                    </p>
+                </div>
+
+                <br> <div class="reflection-entry">
+                    <h3>Professional Growth</h3>
+                    <p>
+                        Beyond the code, Globe Telecom provided me with an immersion into the corporate agile environment. Participating in <strong>daily stand-ups</strong> taught me how to communicate technical progress concisely and how to raise blockers effectively. 
+                    </p>
+                    <p>
+                        Furthermore, the <strong>code review sessions</strong> were invaluable. Receiving feedback from senior engineers helped me adopt best practices, write cleaner code, and understand that software engineering is a collaborative effort, not a solitary one. I learned to view constructive criticism as a tool for growth.
+                    </p>
+                </div>
+
+                <br> <div class="reflection-entry">
+                    <h3>Conclusion</h3>
+                    <p>
+                        My internship from September to December 2025 was a pivotal step in my career. It bridged the gap between academic theory and real-world application. I am leaving Globe Telecom not just with better coding skills, but with a professional mindset ready to tackle complex challenges in the tech industry.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('footer.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error loading the footer:', error);
+            });
+    </script>
+
+
+</body>
+</html>
