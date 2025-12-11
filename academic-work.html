@@ -16,20 +16,7 @@
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Desmond John Tubije</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="academic-work.html">Academic Work</a></li>
-                    <li><a href="internship.html">Internship</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="reflection.html">Reflection</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<div id="header-placeholder"></div>
 
     <main>
         <section id="academic-work" class="content-section">
@@ -93,6 +80,23 @@
     <div id="footer-placeholder"></div>
 
     <script>
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+
+            // 2. Highlight the current page in the navigation
+            const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            navLinks.forEach(link => {
+                // Check if the link's href matches the current file name
+                if (link.getAttribute('href') === currentPath) {
+                    link.style.color = '#3498db'; // Sets your primary blue color
+                    link.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                }
+            });
+        });
         fetch('footer.html')
             .then(response => {
                 if (!response.ok) {
