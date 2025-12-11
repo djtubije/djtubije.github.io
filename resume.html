@@ -89,8 +89,6 @@
                         <i class="fas fa-download"></i> Download Resume
                     </button>
                 </div>
-
-
             </div>
         </section>
     </main>
@@ -133,10 +131,10 @@
         const element = document.querySelector('.resume-paper');
 
         const opt = {
-            margin:       0.5,               // inches
+            margin:       0.5,               
             filename:     'DesmondJohnTubije_Resume.pdf',
             image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2 },      // higher scale = better quality
+            html2canvas:  { scale: 2 },      
             jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
         };
 
