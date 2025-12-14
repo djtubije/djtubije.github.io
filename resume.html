@@ -33,12 +33,12 @@
                                 </a>
                             </span>
                             <span> 
-                                <a href="https://www.linkedin.com/in/desmond-john-tubije-7907a337a/">
+                                <a href="https://www.linkedin.com/in/desmond-john-tubije-7907a337a/" aria-label="Visit Desmond's Linkedin Profile">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </span>
                             <span> 
-                                <a href="https://github.com/djtubije">
+                                <a href="https://github.com/djtubije" aria-label="Visit Desmond's GitHub Profile">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </span>
@@ -57,25 +57,66 @@
                     </div>
                     <div class="resume-section">
                         <h3>Technical Skills</h3>
-                        <ul class="skills-grid">
-                            <li>HTML5, CSS, Streamlit, Laravel</li>
-                            <li>Python, PHP, Kotlin, C#, JavaScript</li>
-                            <li>Git & GitHub</li>
-                            <li>MSSQL, MongoDB</li>
+                        <ul class="skills-grid" style="list-style: none; padding: 0;">
+                            <li class="skill-item">
+                                <strong>Programming Languages:</strong> Python, PHP, C#, JavaScript, Dart
+                            </li>
+                            <li class="skill-item">
+                                <strong>Frameworks & Libraries:</strong> Laravel, Flutter, Pandas, Streamlit
+                            </li>
+                            <li class="skill-item">
+                                <strong>Web Technologies:</strong> HTML5, CSS3
+                            </li>
+                            <li class="skill-item">
+                                <strong>Databases:</strong> MSSQL, MongoDB
+                            </li>
+                            <li class="skill-item">
+                                <strong>Tools:</strong> Git/GitHub, Postman
+                            </li>
                         </ul>
                     </div>
+                    
                     <div class="resume-section">
                         <h3>Experience</h3>      
                         <div class="job-entry">
                             <h4>Intern - Software Engineer & Systems Analyst</h4>
                             <span class="job-date">Globe Telecom Inc | Sept 2025 - Dec 2025</span>
+                            
                             <ul>
-                                <li>Designed and developed a script to automate the web tool auditing process.</li>
-                                <li>Collaborated with cross-functional teams within the department to create a network diagram for the pSIM to eSIM conversion.</li>
+                                <li>Participated in daily stand-ups, code reviews, and agile workflows.</li>
                                 <li>Communicated project updates to stakeholders in a clear and timely manner.</li>
+                            </ul>
+
+                            <div style="margin-top: 10px;">
+                                <p style="font-weight: 600; margin-bottom: 5px; font-size: 0.95rem;">Key Projects:</p>
+                                <ul style="list-style-type: circle; margin-left: 20px;">
+                                    <li>
+                                        <strong>Web Tool Audit Automation:</strong> Designed and developed a script to automate the auditing process, significantly reducing the turn around time.
+                                    </li>
+                                    <li>
+                                        <strong>eSIM Project:</strong> Collaborated with other teams from the department to create a
+                                        detailed customer journey, network diagrams, and sequence diagrams in visualizing the architecture workflow.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3>Notable Academic Projects</h3>
+                        
+                        <div class="job-entry">
+                            <h4>Capstone Project - GABAY: Intelligent Flood Alert System for Commuter Safety in Flood-Prone Areas</h4>
+                            <span class="job-date">Lead Developer | 2025</span>
+                            <p style="font-style: italic; font-size: 0.9em; margin-bottom: 5px;">Tech Stack: Laravel, Flutter, MongoDB</p>
+                            <ul>
+                                <li><strong>API Architecture:</strong> Designed and developed a custom Backend API using <strong>Laravel</strong> to 
+                                    bridge communication between the database and Flutter mobile application.</li>
+                                <li><strong>Security:</strong> Integrated <strong>Google Authentication</strong> (OAuth) to facilitate secure and streamlined user sign-in.</li>
                             </ul>
                         </div>
                     </div>
+
                     <div class="resume-section">
                         <h3>Education</h3>
                         <div class="education-entry">
@@ -136,20 +177,38 @@
         document.getElementById('download-btn').addEventListener('click', () => {
             const element = document.querySelector('.resume-paper');
 
+            const originalShadow = element.style.boxShadow;
+            const originalBorder = element.style.border;
+            const originalWidth = element.style.width;
+
+
+            element.style.boxShadow = 'none';
+            element.style.border = 'none';
+            
+
+            element.style.width = '8.5in'; 
+            element.style.backgroundColor = 'white';
+
             const opt = {
-                margin:       0.5, 
+                margin:       0, 
                 filename:     'DesmondJohnTubije_Resume.pdf',
                 image:        { type: 'jpeg', quality: 0.98 },
                 html2canvas:  { 
                     scale: 2, 
-                    backgroundColor: '#ffffff', 
-                    scrollY: 0 
+                    backgroundColor: '#ffffff',
+                    useCORS: true, 
+                    scrollY: 0
                 },
                 jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' },
                 pagebreak:    { mode: ['css', 'legacy'] }
             };
 
-            html2pdf().set(opt).from(element).save();
+            html2pdf().set(opt).from(element).save()
+            .then(() => {
+                element.style.boxShadow = originalShadow;
+                element.style.border = originalBorder;
+                element.style.width = originalWidth;
+            });
         });
     </script>
 

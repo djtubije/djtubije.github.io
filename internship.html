@@ -24,6 +24,17 @@
                 <div class="internship-item">
                     <h3>Globe Telecom Inc.</h3>
                     <h4>Intern - Software Engineer & Systems Analyst | 09/08/2025 - 12/10/2025</h4>
+                    <p style="margin-top: 15px; margin-bottom: 15px; text-align: justify;">
+                        My time at Globe Telecom Inc. taught me that while college provides a strong 
+                        foundation, the vast majority of learning happens on the job. Encountering 
+                        unfamiliar technologies challenged me to step out of my comfort zone and bridge 
+                        the gap between academic theory and industry practice, significantly aiding my 
+                        growth as an aspiring IT professional.
+                    </p>
+                    <p style="margin-top: 15px; margin-bottom: 15px; text-align: justify;">
+                        Additionally, here are the action items that I did during my three month stay at
+                        the company.
+                    </p>
                     <ul>
                         <li>Designed a document and Developed a script that automates webtool audit.</li>
                         <li>Participated in daily stand-ups and code reviews.</li>
@@ -36,8 +47,16 @@
 
                     <div class="project-card">
                         <div class="project-thumbnail">
-                            <img src="images/Frontend.png" alt="ACL - Webtool Audit Automation">
+                            <img src="images/Frontend.png" alt="ACL - Webtool Audit Automation" class="slide active">
+                            
+                            <img src="images/Frontend.png" alt="Audit Process View" class="slide">
+                            
+                            <img src="images/Frontend.png" alt="Streamlit Dashboard" class="slide">
+
+                            <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">&#10094;</button>
+                            <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">&#10095;</button>
                         </div>
+
                         <div class="project-info">
                             <h4>ACL - Webtool Audit Automation</h4>
                             <div class="project-meta">Python</div>
@@ -60,7 +79,7 @@
 
                     <div class="project-card">
                         <div class="project-thumbnail">
-                            <img src="images/Globe eSIM .jpg" alt="eSIM Project">
+                            <img src="images/Globe eSIM .jpg" alt="eSIM Project" class="slide active">
                         </div>
                         <div class="project-info">
                             <h4>eSIM Project</h4>
@@ -76,7 +95,7 @@
 
                     <div class="project-card">
                         <div class="project-thumbnail">
-                            <img src="images/DevconTeam1.jpeg" alt="Automation Team">
+                            <img src="images/DevconTeam1.jpeg" alt="Automation Team" class="slide active">
                         </div>
                         <div class="project-info">
                             <h4>Globe DevCon 2025</h4>
@@ -90,15 +109,19 @@
 
                     <div class="project-card">
                         <div class="project-thumbnail">
-                            <img src="images/AutomationTeam.JPG" alt="Automation Team">
+                            <img src="images/AutomationTeam.JPG" alt="Year End Party Group" class="slide active">
+                            <img src="images/YearEnd.JPG" alt="Interns" class="slide">
+
+                            <button class="slider-btn prev-btn" onclick="changeSlide(this, -1)">&#10094;</button>
+                            <button class="slider-btn next-btn" onclick="changeSlide(this, 1)">&#10095;</button>
                         </div>
                         <div class="project-info">
                             <h4>2025 Year End Party</h4>
                             <div class="project-meta">Estancia De San Lorenzo, San Mateo, Rizal &nbsp;&bull;&nbsp; Dec. 04, 2025 - Dec. 05, 2025</div>
-                                <ul class="project-desc project-bullets">
-                                    <li>Attended the departments year end team building.</li>
-                                    <li>Assisted in the event by being assigned in the tech department.</li>
-                                </ul>
+                            <ul class="project-desc project-bullets">
+                                <li>Attended the departments year end team building.</li>
+                                <li>Assisted in the event by being assigned in the tech department.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -115,6 +138,7 @@
     <div id="footer-placeholder"></div>
 
 <script>
+        // Header and Footer Loading
         fetch('header.html')
         .then(response => response.text())
         .then(data => {
@@ -138,21 +162,52 @@
             })
             .catch(error => { console.error('Error loading the footer:', error); });
 
+        function changeSlide(btn, n) {
+            const thumbnailContainer = btn.parentElement;
+            const slides = thumbnailContainer.getElementsByClassName("slide");
+            
+            let activeIndex = 0;
+            for (let i = 0; i < slides.length; i++) {
+                if (slides[i].classList.contains("active")) {
+                    activeIndex = i;
+                    break;
+                }
+            }
+
+            let nextIndex = activeIndex + n;
+            if (nextIndex >= slides.length) nextIndex = 0;
+            if (nextIndex < 0) nextIndex = slides.length - 1;
+
+            slides[activeIndex].classList.remove("active");
+            slides[nextIndex].classList.add("active");
+
+            slides[nextIndex].onclick = function() {
+                openModal(this);
+            }
+        }
+
         var modal = document.getElementById("myModal");
         var modalImg = document.getElementById("img01");
         var captionText = document.getElementById("caption");
-        var images = document.querySelectorAll('.project-thumbnail img');
+        var images = document.querySelectorAll('.slide'); 
+        function openModal(imgElement) {
+            modal.style.display = "block";
+            modalImg.src = imgElement.src;
+            captionText.innerHTML = imgElement.alt;
+        }
 
         images.forEach(img => {
             img.onclick = function(){
-                modal.style.display = "block";
-                modalImg.src = this.src;
-                captionText.innerHTML = this.alt; 
+                if(this.classList.contains('active')) {
+                    openModal(this);
+                }
             }
         });
 
         var span = document.getElementsByClassName("close")[0];
-        span.onclick = function() { modal.style.display = "none"; }
+        if(span) {
+            span.onclick = function() { modal.style.display = "none"; }
+        }
         modal.onclick = function(event) {
             if (event.target === modal) { modal.style.display = "none"; }
         }

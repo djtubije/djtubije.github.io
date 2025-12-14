@@ -159,10 +159,11 @@ header nav ul li a:hover {
 }
 
 .skills-grid {
-    display: flex;
-    gap: 40px; 
-    justify-content: center;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 10px;
+    list-style: none;
+    padding: 0;
 }
 
 .skill-category {
@@ -198,6 +199,10 @@ header nav ul li a:hover {
 
 .skill-category strong {
     color: var(--primary-color)
+}
+
+.skill-item {
+    margin-bottom: 8px;
 }
 
 .content-section {
@@ -311,27 +316,73 @@ header nav ul li a:hover {
     transform: translateY(-2px);
 }
 
+/* --- UPDATED THUMBNAIL LOGIC FOR CAROUSEL --- */
 .project-thumbnail {
     flex: 0 0 300px; 
     margin-right: 25px;
-    position: relative;
+    position: relative; /* Needed to position buttons */
     background: #eee;
+    height: 170px;
+    border-radius: 8px;
+    overflow: hidden; /* Clips images during slide */
 }
 
-.project-thumbnail img {
+/* Hide all slides by default */
+.project-thumbnail .slide {
+    display: none;
     width: 100%;
-    height: 170px; 
+    height: 100%; 
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.2s ease;
-    display: block; 
 }
 
-.project-thumbnail img:hover {
+/* Only show the active one */
+.project-thumbnail .slide.active {
+    display: block;
+}
+
+.project-thumbnail .slide:hover {
     transform: scale(1.05);
     opacity: 0.9;
 }
+
+/* Slider Arrow Buttons */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Hidden unless hovered */
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+/* Show buttons on hover */
+.project-thumbnail:hover .slider-btn {
+    opacity: 1;
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+/* ------------------------------------------- */
 
 .project-info {
     flex: 1;
@@ -544,6 +595,14 @@ header nav ul li a:hover {
     page-break-after: auto;
 }
 
+.resume-section p {
+            text-align: justify;
+}
+
+.resume-section li {
+            text-align: justify;
+}
+
 .resume-section h3 {
     color: var(--secondary-color);
     border-bottom: 2px solid #eee;
@@ -722,11 +781,19 @@ footer {
         flex: none;
         margin-right: 0;
         margin-bottom: 15px;
+        /* Allow height to adjust on mobile if needed, or keep it fixed */
+        height: auto;
+        min-height: 200px;
     }
 
     .project-thumbnail img {
         height: auto; 
         max-height: 250px;
+    }
+
+    /* Keep carousel buttons visible on mobile */
+    .slider-btn {
+        opacity: 1;
     }
 
     .project-info h4 {
