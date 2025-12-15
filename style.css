@@ -159,9 +159,10 @@ header nav ul li a:hover {
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 10px;
+    display: flex;              
+    justify-content: center;    
+    gap: 30px;                  
+    flex-wrap: wrap;            
     list-style: none;
     padding: 0;
 }

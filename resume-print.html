@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desmond John Tubije - Resume</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        /* 1. BASIC SETTINGS */
+        :root {
+            --primary-color: #3498db; 
+            --secondary-color: #2c3e50; 
+            --text-color: #333;
+            --font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: white; 
+            font-family: var(--font-family);
+            color: var(--text-color);
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .resume-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+
+        .skills-grid-print {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+
+            list-style: none;   
+            padding: 0;        
+            margin: 0;          
+        }
+
+
+
+        .skills-grid-print li {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+            font-size: smaller;
+            width: auto !important; 
+            margin: 0;
+        }
+
+        /* 3. TYPOGRAPHY */
+        h1 { color: var(--secondary-color); font-size: 2.2rem; margin: 0 0 5px 0; text-align: center; }
+        .resume-subtitle { text-align: center; font-size: 1rem; color: #555; margin-bottom: 10px; }
+        .resume-contact-info { text-align: center; margin-bottom: 15px; }
+        .resume-contact-info a { color: var(--primary-color); text-decoration: none; font-size: 1.2rem; margin: 0 10px; }
+        
+        h3 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        h4 { margin: 0 0 2px 0; color: #333; font-size: 1rem; font-weight: 700; }
+        p { margin-bottom: 10px; text-align: justify; font-size: medium; }
+        
+        /* 4. LIST STYLES */
+        .job-entry { margin-bottom: 15px; }
+        .job-date { display: block; color: #7f8c8d; font-size: 0.9rem; margin-bottom: 5px; font-style: italic; }
+        ul.bullet-list { padding-left: 20px; margin-top: 5px; margin-bottom: 10px; }
+        ul.bullet-list li { margin-bottom: 3px; font-size: 0.95rem; }
+
+        @media print {
+            @page { margin: 0.5in; size: letter; }
+            body { 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+                margin: 0; 
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        
+        <header>
+            <h1>Desmond John Tubije</h1>
+            <p class="resume-subtitle">Entry-Level Software Developer | Information Systems Graduate</p>
+            <div class="resume-contact-info">
+                <span><a href="#"><i class="fas fa-envelope"></i></a></span>
+                <span><a href="#"><i class="fab fa-linkedin"></i></a></span>
+                <span><a href="#"><i class="fab fa-github"></i></a></span>
+            </div>
+        </header>
+        
+        <hr style="border: 0; border-top: 1px solid #ddd; margin: 10px 0;">
+
+        <div>
+            <h3>Professional Summary</h3>
+            <p>
+                Enthusiastic and detail-oriented fresh graduate with a strong foundation in 
+                web and software technologies. Passionate about developing solutions to 
+                complex problems through code. Highly motivated to learn, grow, and 
+                contribute to a professional team while exploring new frameworks and 
+                opportunities in the tech industry.
+            </p>
+        </div>
+        
+        <div>
+            <h3>Technical Skills</h3>
+            
+            <ul class="skills-grid-print">
+                <li class="skill-item">
+                    <strong>Programming Languages:</strong><br> Python, PHP, C#, JavaScript, Dart
+                </li>
+                <li class="skill-item">
+                    <strong>Frameworks & Libraries:</strong><br> Laravel, Flutter, Pandas, Streamlit
+                </li>
+                <li class="skill-item">
+                    <strong>Web Technologies:</strong><br> HTML5, CSS3
+                </li>
+                <li class="skill-item">
+                    <strong>Databases:</strong><br> MSSQL, MongoDB
+                </li>
+                <li class="skill-item">
+                    <strong>Tools:</strong><br> Git/GitHub, Postman
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h3>Experience</h3>      
+            <div class="job-entry">
+                <h4>Intern - Software Engineer & Systems Analyst</h4>
+                <span class="job-date">Globe Telecom Inc | Sept 2025 - Dec 2025</span>
+                <ul class="bullet-list">
+                    <li>Participated in daily stand-ups, code reviews, and agile workflows.</li>
+                    <li>Communicated project updates to stakeholders in a clear and timely manner.</li>
+                </ul>
+                <div style="margin-top: 10px;">
+                    <p style="font-weight: 600; margin-bottom: 5px; font-size: 0.95rem;">Key Projects:</p>
+                    <ul class="bullet-list" style="margin-left: 20px;">
+                        <li><strong>Web Tool Audit Automation:</strong> Designed and developed a script to automate the auditing process.</li>
+                        <li><strong>eSIM Project:</strong> Collaborated with other teams to create customer journey maps.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </br>
+    </br>
+    </br>
+        <div>
+            <h3>Notable Academic Projects</h3>
+            <div class="job-entry">
+                <h4>Capstone Project - GABAY</h4>
+                <span class="job-date">Lead Developer | 2025</span>
+                <p style="font-style: italic; font-size: 0.9em; margin-bottom: 5px; margin-top: 0;">Tech Stack: Laravel, Flutter, MongoDB</p>
+                <ul class="bullet-list">
+                    <li><strong>API Architecture:</strong> Designed custom Backend API using Laravel.</li>
+                    <li><strong>Security:</strong> Integrated Google Authentication.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <h3>Education</h3>
+            <div class="education-entry" style="margin-bottom: 15px;">
+                <h4>Bachelor of Science in Information Systems</h4>
+                <span class="job-date">De La Salle-College of Saint Benilde | 2026</span>
+                <p style="margin: 0;">Awards: Dean's Lister | AY 2022-2023</p>
+            </div>
+            <div class="education-entry">
+                <h4>Bachelor in Medical Laboratory Science</h4>
+                <span class="job-date">Far Eastern University Nicanor Reyes Medical Foundation | 2019</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onafterprint = function() {
+            window.close();
+        };
+
+        window.onload = function() {
+            window.print();
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
