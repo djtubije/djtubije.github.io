@@ -317,18 +317,16 @@ header nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* --- UPDATED THUMBNAIL LOGIC FOR CAROUSEL --- */
 .project-thumbnail {
     flex: 0 0 300px; 
     margin-right: 25px;
-    position: relative; /* Needed to position buttons */
+    position: relative; 
     background: #eee;
     height: 170px;
     border-radius: 8px;
-    overflow: hidden; /* Clips images during slide */
+    overflow: hidden; 
 }
 
-/* Hide all slides by default */
 .project-thumbnail .slide {
     display: none;
     width: 100%;
@@ -339,7 +337,6 @@ header nav ul li a:hover {
     transition: transform 0.2s ease;
 }
 
-/* Only show the active one */
 .project-thumbnail .slide.active {
     display: block;
 }
@@ -349,7 +346,6 @@ header nav ul li a:hover {
     opacity: 0.9;
 }
 
-/* Slider Arrow Buttons */
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -366,12 +362,11 @@ header nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Hidden unless hovered */
+    opacity: 0; 
     transition: opacity 0.3s;
     z-index: 10;
 }
 
-/* Show buttons on hover */
 .project-thumbnail:hover .slider-btn {
     opacity: 1;
 }
@@ -383,7 +378,6 @@ header nav ul li a:hover {
 .prev-btn { left: 10px; }
 .next-btn { right: 10px; }
 
-/* ------------------------------------------- */
 
 .project-info {
     flex: 1;
@@ -782,7 +776,6 @@ footer {
         flex: none;
         margin-right: 0;
         margin-bottom: 15px;
-        /* Allow height to adjust on mobile if needed, or keep it fixed */
         height: auto;
         min-height: 200px;
     }
@@ -792,7 +785,6 @@ footer {
         max-height: 250px;
     }
 
-    /* Keep carousel buttons visible on mobile */
     .slider-btn {
         opacity: 1;
     }
