@@ -12,7 +12,13 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body, html { overflow-x: hidden; }
+    </style>
 </head>
 <body>
 
@@ -24,8 +30,9 @@
                 <h2>Reflection on my College Life</h2>
                 
                 <div class="reflection-entry">
-                    <h3>My Benildean Journey</h3>
-                    <p>
+                    <h3 data-aos="fade-up" data-aos-duration="1000">My Benildean Journey</h3>
+                    
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                         As a second-degree student, my college experience is unique compared to my peers. 
                         I focus primarily on efficiency and professional growth rather than just the social 
                         aspects of college life. I prioritize long-term rewards over short-term thrills. 
@@ -33,14 +40,16 @@
                         a career that perfectly aligns with my ambition to see the world and work from anywhere.
                     </p>
 
-                    <p>
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                         I am committed in improving my soft and technical skills continuously. 
                         I aim to become the best developer that I can be. 
                         Through this portfolio, it could serve as a bridge
                         for me to hone my skills in programming that will serve as my tool for my career.
                     </p>
-                    <h3>Learning is a continuous process</h3>
-                    <p>
+                    
+                    <h3 data-aos="fade-up" data-aos-duration="1000">Learning is a continuous process</h3>
+                    
+                    <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                         During my academic years at college, I learned various programming languages 
                         that proved invaluable during my On-The-Job Training. I also confirmed my belief 
                         that learning is a continuous process, it does not stop at the tertiary level 
@@ -55,6 +64,12 @@
     </main>
 
     <div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
 
 <script>
         fetch('header.html')
@@ -86,7 +101,6 @@
                 console.error('Error loading the footer:', error);
             });
     </script>
-
 
 </body>
 </html>

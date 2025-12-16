@@ -10,7 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
     
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body, html { overflow-x: hidden; }
+    </style>
 </head>
 <body>
 
@@ -21,7 +27,7 @@
             <div class="container">
                 <h2>Internship Experience @ Globe Telecom Inc</h2>
                 
-                <div class="internship-item">
+                <div class="internship-item" data-aos="fade-up" data-aos-duration="1000">
                     <h3>Globe Telecom Inc.</h3>
                     <h4>Intern - Software Engineer & Systems Analyst | 09/08/2025 - 12/10/2025</h4>
                     <p style="margin-top: 15px; margin-bottom: 15px; text-align: justify;">
@@ -44,9 +50,9 @@
                 </div>
 
                 <div class="projects-section">
-                    <h3 class="projects-header">Intern Work Experience and Deliverables</h3>
+                    <h3 class="projects-header" data-aos="fade-up" data-aos-duration="1000">Intern Work Experience and Deliverables</h3>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-duration="1000">
                         <div class="project-thumbnail">
                             <img src="images/Frontend.png" alt="ACL - Webtool Audit Automation" class="slide active">
                         </div>
@@ -71,7 +77,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
                         <div class="project-thumbnail">
                             <img src="images/Globe eSIM .jpg" alt="eSIM Project" class="slide active">
                         </div>
@@ -87,7 +93,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                         <div class="project-thumbnail">
                             <img src="images/DevconTeam1.jpeg" alt="Automation Team" class="slide active">
                         </div>
@@ -101,7 +107,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="450">
                         <div class="project-thumbnail">
                             <img src="images/AutomationTeam.JPG" alt="Year End Party Group" class="slide active">
                             <img src="images/YearEnd.JPG" alt="Interns" class="slide">
@@ -130,6 +136,12 @@
     </div>
 
     <div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
 
 <script>
         fetch('header.html')

@@ -12,7 +12,13 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body, html { overflow-x: hidden; }
+    </style>
 </head>
 <body>
 
@@ -24,7 +30,8 @@
                 <h2>Academic Work</h2>
                 
                 <div class="project-grid">
-                    <div class="project-item">
+                    
+                    <div class="project-item" data-aos="fade-up" data-aos-duration="1000">
                         <h3> Simple Queuing Project</h3>
                         <div class="project-meta">C# &nbsp;&bull;&nbsp; Visual Studio</div>
                         <p>
@@ -37,7 +44,7 @@
                         </a>
                     </div>
 
-                    <div class="project-item">
+                    <div class="project-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
                         <h3> Pharmaceutical Database</h3>
                         <div class="project-meta">MSSQL</div>
                         <p>
@@ -50,7 +57,7 @@
                         </a>
                     </div>
 
-                    <div class="project-item">
+                    <div class="project-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
                         <h3> MobDevt Final Output</h3>
                         <div class="project-meta">Kotlin &nbsp;&bull;&nbsp; Android Studio</div>
                         <p>
@@ -63,7 +70,7 @@
                         </a>
                     </div>
                     
-                    <div class="project-item">
+                    <div class="project-item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="450">
                         <h3>GABAY: Intelligent Flood Alert System for Commuter Safety in Flood-Prone Areas </h3>
                         <div class="project-meta">PHP &nbsp;&bull;&nbsp; Dart &nbsp;&bull;&nbsp; MongoDB &nbsp;&bull;&nbsp; Android Studio &nbsp;&bull;&nbsp; Visual Studio Code</div>
                         <p>
@@ -82,6 +89,12 @@
     </main>
 
     <div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
 
     <script>
         fetch('header.html')
